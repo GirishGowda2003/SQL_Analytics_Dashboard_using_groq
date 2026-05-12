@@ -6,6 +6,7 @@ import re
 import json
 import plotly.express as px
 import plotly.graph_objects as go
+from langchain_groq import ChatGroq
 
 # ─────────────────────────────────────────────
 #  CONFIG
@@ -141,7 +142,7 @@ for key, default in [
 #  LLM  – created on demand so key changes apply
 # ─────────────────────────────────────────────
 def get_llm(api_key: str):
-    from langchain_groq import ChatGroq
+    # from langchain_groq import ChatGroq
     return ChatGroq(
         groq_api_key=api_key,
         model="llama-3.3-70b-versatile",
